@@ -3,8 +3,9 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { View, Text } from "react-native";
 import { colors } from "../theme/colors";
 import { Ionicons } from "@expo/vector-icons";
-import SocialScreen from "../../features/Socials/screens/social.screens";
+import SocialNavigator from "./social.navigator";
 import HomeNavigator from "./home.navigator";
+import ProfileNavigator from "./profile.navigator";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -23,21 +24,6 @@ const createScreenOptions = ({ route }) => {
   };
 };
 
-const RecordsScreen = () => {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Records Screen</Text>
-    </View>
-  );
-};
-const SettingsScreen = () => {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Profile Screen</Text>
-    </View>
-  );
-};
-
 export default function AppNavigator() {
   return (
     <Tab.Navigator
@@ -54,8 +40,8 @@ export default function AppNavigator() {
       }}
     >
       <Tab.Screen name="Home" component={HomeNavigator} />
-      <Tab.Screen name="People" component={SocialScreen} />
-      <Tab.Screen name="Profile" component={SettingsScreen} />
+      <Tab.Screen name="People" component={SocialNavigator} />
+      <Tab.Screen name="Profile" component={ProfileNavigator} />
     </Tab.Navigator>
   );
 }
