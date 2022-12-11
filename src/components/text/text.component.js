@@ -33,6 +33,13 @@ font-family:${theme.fonts.heading}
    font-weight:${theme.fontWeights.semiBold}
   
  `;
+const header = (theme) => `
+
+ font-size: ${theme.fontSizes.body}
+
+   color: ${theme.colors.ui.quaternary}
+
+`;
 
 const caption = (theme) => `
 font-family:${theme.fonts.heading}
@@ -54,6 +61,7 @@ const variants = {
   caption,
   success,
   label,
+  header,
 };
 
 export const Text = styled.Text`
