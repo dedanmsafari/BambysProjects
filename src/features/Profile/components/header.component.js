@@ -8,11 +8,11 @@ import {
 } from "../screens/profileScreen.styles";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 
-const Header = ({ title, enableMore }) => {
+const Header = ({ title, enableMore, backIcon }) => {
   return (
     <HeaderContainer>
       <BackIconContainer>
-        <Ionicons name="arrow-back" size={24} color="white" />
+        {backIcon && <Ionicons name="arrow-back" size={24} color="white" />}
         <Spacer position="left" size="small" />
         <Text variant="header">{title}</Text>
       </BackIconContainer>
