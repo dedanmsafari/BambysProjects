@@ -21,3 +21,17 @@ export const LogoButtonHome = styled.TouchableOpacity`
 export const IconButton = styled.TouchableOpacity`
   padding-left: 15px;
 `;
+
+///--- modal styles
+
+export const ModalContainer = styled.View`
+  position: absolute;
+  justify-content: space-around;
+  padding: 5px 10px;
+  top: 35px;
+  right: 170px;
+  width: 150px;
+  height: 100px;
+  background-color: whitesmoke;
+  z-index: 1;
+`;
