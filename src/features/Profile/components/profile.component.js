@@ -5,19 +5,15 @@ import AvatarIcon from "../../../components/Avatar/avatar.component";
 import { Text } from "../../../components/text/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 
-const ProfileBlock = () => {
+const ProfileBlock = ({ source, name, bio }) => {
   return (
     <ProfileContainer>
-      <AvatarIcon
-        source={require("../../../../assets/postPicture.png")}
-        size={150}
-      />
+      <AvatarIcon source={source} size={150} />
       <Spacer />
-      <Text variant="label">Dedan Msafari</Text>
+      <Text variant="label">{name}</Text>
       <Spacer />
       <Text variant="caption" style={{ width: 300, textAlign: "center" }}>
-        The guy you call when you want to get your products ready and designs
-        perfect
+        {bio}
       </Text>
     </ProfileContainer>
   );
