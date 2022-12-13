@@ -13,6 +13,9 @@ export const UserInfo = styled.View`
   flex-direction: column;
   padding: 0px 8px;
 `;
+export const UserDetails = styled.TouchableOpacity`
+  flex-direction: row;
+`;
 
 export const LocationMarker = styled.View`
   margin-left: auto;
