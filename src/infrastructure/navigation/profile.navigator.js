@@ -19,7 +19,7 @@ const Stack = createStackNavigator();
 
 const ProfileNavigator = () => {
   return (
-    <View style={{ flex: 1, backgroundColor: `${colors.ui.header}` }}>
+    <View style={{ flex: 1, backgroundColor: colors.ui.header }}>
       <StyledSafeAreaView>
         <Stack.Navigator
           screenOptions={{

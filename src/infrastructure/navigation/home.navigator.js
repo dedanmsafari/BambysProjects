@@ -6,6 +6,7 @@ import {
   CardStyleInterpolators,
 } from "@react-navigation/stack";
 import HomeScreen from "../../features/Home/screens/home.screens";
+import UserDetailsScreen from "../../features/Home/screens/userDetails.screens";
 import { StyledSafeAreaView } from "../../utils/safeArea.util.component";
 import styled from "styled-components/native";
 const Stack = createStackNavigator();
@@ -29,6 +30,10 @@ const HomeNavigator = () => {
           }}
         >
           <Stack.Screen name="HomeScreen" component={HomeScreen} />
+          <Stack.Screen
+            name="UserDetailsScreen"
+            component={UserDetailsScreen}
+          />
         </Stack.Navigator>
       </StyledSafeAreaView>
     </View>
