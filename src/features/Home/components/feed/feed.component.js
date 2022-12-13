@@ -5,6 +5,7 @@ import { Ionicons, MaterialIcons, Fontisto } from "@expo/vector-icons";
 import {
   Body,
   FeedContainer,
+  UserDetails,
   Header,
   LocationMarker,
   UserInfo,
@@ -14,6 +15,8 @@ import {
   Like,
 } from "./feed.styles";
 import { colors } from "../../../../infrastructure/theme/colors";
+import { useNavigation } from "@react-navigation/native";
+import UserDetailsScreen from "../../screens/userDetails.screens";
 
 const Feed = ({
   feed: {
@@ -28,14 +31,18 @@ const Feed = ({
     comments,
   },
 }) => {
+  const navigation = useNavigation();
+
   return (
     <FeedContainer>
       <Header>
-        <AvatarIcon online={online} source={profilePic} />
-        <UserInfo>
-          <Text variant="caption">{userName}</Text>
-          <Text variant="caption">{time}</Text>
-        </UserInfo>
+        <UserDetails onPress={() => navigation.navigate(UserDetailsScreen)}>
+          <AvatarIcon online={online} source={profilePic} />
+          <UserInfo>
+            <Text variant="caption">{userName}</Text>
+            <Text variant="caption">{time}</Text>
+          </UserInfo>
+        </UserDetails>
         <Ionicons name={IconName} size={24} color={colors.ui.icons} />
         <Text variant="caption">{IconText}</Text>
         <LocationMarker>
