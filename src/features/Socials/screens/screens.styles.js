@@ -7,7 +7,7 @@ export const SocialsContainer = styled.View`
   padding-top: 3px;
 `;
 
-export const PersonContainer = styled.View`
+export const PersonContainer = styled.TouchableOpacity`
   padding: 15px 20px;
   flex-direction: row;
   justify-content: space-between;
