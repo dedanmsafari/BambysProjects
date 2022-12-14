@@ -10,12 +10,15 @@ import styled from "styled-components/native";
 import PersonData from "../components/personDetail.data";
 import PersonDetail from "../components/personDetail.component";
 import { FadeInView } from "../../../animations/fade.animation";
+import { useNavigation } from "@react-navigation/native";
+import UserDetailsScreen from "../../Home/screens/userDetails.screens";
 
 const FeedList = styled(FlatList).attrs({
   contentContainerStyle: { padding: 0 },
 })``;
 
 const LocalsScreen = () => {
+  const navigation = useNavigation();
   return (
     <SocialsContainer>
       <Interests />
@@ -29,7 +32,10 @@ const LocalsScreen = () => {
         renderItem={({ item }) => {
           return (
             <FadeInView>
-              <PersonDetail info={item} />
+              <PersonDetail
+                onPress={() => navigation.navigate(UserDetailsScreen)}
+                info={item}
+              />
             </FadeInView>
           );
         }}
