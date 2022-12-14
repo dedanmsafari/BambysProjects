@@ -12,9 +12,9 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../../../infrastructure/theme/colors";
 
-const PersonDetail = ({ info: { source, name, postNumber } }) => {
+const PersonDetail = ({ onPress, info: { source, name, postNumber } }) => {
   return (
-    <PersonContainer>
+    <PersonContainer onPress={onPress}>
       <UserContainer>
         <AvatarIcon source={source} online />
         <Spacer position="right" size="small" />
