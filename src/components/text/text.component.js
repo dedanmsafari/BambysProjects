@@ -10,7 +10,14 @@ margin-bottom:0px;
 `;
 
 const body = (theme) => `
+
  font-size: ${theme.fontSizes.body}
+ 
+ `;
+const walkthrough = (theme) => `
+font-family: ${theme.fonts.heading}
+ font-size: ${theme.fontSizes.body}
+ 
  `;
 
 const hint = (theme) => `
@@ -62,6 +69,7 @@ const variants = {
   success,
   label,
   header,
+  walkthrough,
 };
 
 export const Text = styled.Text`
