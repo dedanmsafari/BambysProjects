@@ -15,7 +15,7 @@ const TopBar = ({ onPress }) => {
     <TopBarContainer>
       <LogoButtonHome activeOpacity={0.5} onPress={onPress}>
         <Image
-          style={{ height: 35, width: 130 }}
+          style={{ height: 36, width: 130 }}
           source={require("../../../../../assets/brandName.png")}
         />
         <Ionicons name="chevron-down-outline" size={20} color="black" />
