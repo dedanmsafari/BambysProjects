@@ -7,11 +7,13 @@ const LogoBlock = () => {
   return (
     <LogoContainer>
       <Image
-        style={{ height: 60, width: 60 }}
+        style={{ height: 86.5, width: 94 }}
         source={require("../../../../assets/Logo.png")}
       />
       <Spacer />
-      <Text variant="hint">Version 1.0.0</Text>
+      <Text variant="hint" style={{ marginLeft: -12 }}>
+        Version 1.0.0
+      </Text>
     </LogoContainer>
   );
 };
