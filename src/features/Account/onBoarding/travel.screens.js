@@ -31,7 +31,7 @@ const TravelWalkthrough = () => {
           variant="body"
           style={{ width: 300, textAlign: "center", color: "#757575" }}
         >
-          Interact with similar minds in neighborhoods across the world.
+          Share your Vibe with similar minds in neighborhoods across the world.
         </Text>
       </TravelContainer>
     </View>

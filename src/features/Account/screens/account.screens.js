@@ -14,7 +14,7 @@ import { Text } from "../../../components/text/text.component";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { colors } from "../../../infrastructure/theme/colors";
 
-const AccountScreen = () => {
+const AccountScreen = ({ navigation }) => {
   return (
     <>
       <Swiper
@@ -29,13 +29,19 @@ const AccountScreen = () => {
         <TravelWalkthrough />
       </Swiper>
       <ButtonsContainer>
-        <SignInButton activeOpacity={0.5}>
+        <SignInButton
+          activeOpacity={0.5}
+          onPress={() => navigation.navigate("Register")}
+        >
           <Text variant="caption" style={{ color: "white" }}>
             Get Started
           </Text>
         </SignInButton>
         <Spacer size="medium" />
-        <CreateAccountButton activeOpacity={0.5}>
+        <CreateAccountButton
+          activeOpacity={0.5}
+          onPress={() => navigation.navigate("Login")}
+        >
           <MaterialCommunityIcons
             name="login-variant"
             size={17}
