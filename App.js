@@ -5,6 +5,7 @@ import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./src/infrastructure/theme";
+import AuthenticationProvider from "./src/services/authentication/authentication.context";
 import {
   useFonts as usePoppins,
   Poppins_300Light,
@@ -53,7 +54,9 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Navigation onReady={onLayoutRootView} />
+        <AuthenticationProvider>
+          <Navigation onReady={onLayoutRootView} />
+        </AuthenticationProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
