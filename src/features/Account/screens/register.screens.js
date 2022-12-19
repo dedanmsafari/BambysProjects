@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, StyleSheet, Image, TextInput } from "react-native";
 import { Text } from "../../../components/text/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
@@ -15,10 +15,10 @@ import {
   OtherSignInText,
   SignInEmailButton,
 } from "./screens.styles";
-import HomeNavigator from "../../../infrastructure/navigation/home.navigator";
-import HomeScreen from "../../Home/screens/home.screens";
+import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 
 const RegisterScreen = ({ navigation }) => {
+  const { setLoggedIn } = useContext(AuthenticationContext);
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <RegisterContainer>
@@ -39,10 +39,7 @@ const RegisterScreen = ({ navigation }) => {
             <Text variant="caption">PHONE</Text>
           </SmsButton>
 
-          <GoogleButton
-            activeOpacity={0.5}
-            onPress={() => navigation.navigate("HomeConnect")}
-          >
+          <GoogleButton activeOpacity={0.5} onPress={() => setLoggedIn(true)}>
             <Image
               style={{ height: 20, width: 20, marginTop: -2 }}
               source={require("../../../../assets/google.png")}
