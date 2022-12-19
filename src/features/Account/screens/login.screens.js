@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   View,
   StyleSheet,
@@ -22,7 +22,10 @@ import {
   SignInEmailButton,
 } from "./screens.styles";
 import BackArrow from "../components/backArrow.component";
+import { AuthenticationContext } from "../../../services/authentication/authentication.context";
+
 const LoginScreen = ({ navigation }) => {
+  const { setLoggedIn } = useContext(AuthenticationContext);
   return (
     <View style={{ flex: 1, backgroundColor: colors.brand.tertiary }}>
       <StyledSafeAreaView>
@@ -54,10 +57,7 @@ const LoginScreen = ({ navigation }) => {
           </OtherSignInText>
 
           <OtherSignInBlock>
-            <SmsButton
-              activeOpacity={0.5}
-              onPress={() => navigation.navigate("HomeConnect")}
-            >
+            <SmsButton activeOpacity={0.5} onPress={() => setLoggedIn(true)}>
               <FontAwesome
                 name="hashtag"
                 size={12}
