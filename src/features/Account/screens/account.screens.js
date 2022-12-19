@@ -20,7 +20,7 @@ const AccountScreen = ({ navigation }) => {
       <Swiper
         loop
         autoplay
-        autoplayTimeout={7}
+        autoplayTimeout={6.5}
         activeDotColor={colors.brand.primary}
         removeClippedSubviews={false}
       >
