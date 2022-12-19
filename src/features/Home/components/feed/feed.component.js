@@ -36,7 +36,7 @@ const Feed = ({
   return (
     <FeedContainer>
       <Header>
-        <UserDetails onPress={() => navigation.navigate(UserDetailsScreen)}>
+        <UserDetails onPress={() => navigation.navigate("UserDetailsScreen")}>
           <AvatarIcon online={online} source={profilePic} />
           <UserInfo>
             <Text variant="caption">{userName}</Text>
