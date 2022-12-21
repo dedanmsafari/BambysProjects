@@ -9,6 +9,7 @@ import HomeScreen from "../../features/Home/screens/home.screens";
 import UserDetailsScreen from "../../features/Home/screens/userDetails.screens";
 import { StyledSafeAreaView } from "../../utils/safeArea.util.component";
 import styled from "styled-components/native";
+import MapsScreens from "../../features/Maps/screens/maps.screens";
 const Stack = createStackNavigator();
 
 // const HomeSafeAreaView = styled(StyledSafeAreaView)`
@@ -34,6 +35,7 @@ const HomeNavigator = () => {
             name="UserDetailsScreen"
             component={UserDetailsScreen}
           />
+          <Stack.Screen name="Maps" component={MapsScreens} />
         </Stack.Navigator>
       </StyledSafeAreaView>
     </View>
