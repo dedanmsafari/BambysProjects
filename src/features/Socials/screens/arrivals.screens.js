@@ -33,7 +33,7 @@ const ArrivalScreen = () => {
           return (
             <FadeInView>
               <PersonDetail
-                onPress={() => navigation.navigate(UserDetailsScreen)}
+                onPress={() => navigation.navigate("UserDetailsScreen")}
                 info={item}
               />
             </FadeInView>
