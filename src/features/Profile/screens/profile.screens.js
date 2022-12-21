@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
 import { Text } from "../../../components/text/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
@@ -11,8 +11,11 @@ import RadiusDistanceBlock from "../components/radiusDistance.component";
 import LogoBlock from "../components/logo.component";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import { colors } from "../../../infrastructure/theme/colors";
+import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 
-const ProfileScreen = () => {
+const ProfileScreen = ({ navigation }) => {
+  const { setLoggedIn, loggedIn } = useContext(AuthenticationContext);
+
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <Header title="profile" enableMore />
@@ -32,7 +35,7 @@ const ProfileScreen = () => {
         <DividerLine />
         <LogoBlock />
         <DividerLine />
-        <SignOutContainer>
+        <SignOutContainer onPress={() => setLoggedIn(false)}>
           <SimpleLineIcons name="logout" size={24} color="red" />
           <Spacer position="right" />
           <Text style={{ color: "red" }}>Sign Out</Text>
