@@ -9,8 +9,6 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 const RadiusDistanceBlock = () => {
   const [value, setValue] = useState(0);
 
-  // console.log(Math.round(value));
-
   const thumbComponent = () => {
     return <Text variant="caption">{Math.round(value * 10) / 10} Kms</Text>;
   };
