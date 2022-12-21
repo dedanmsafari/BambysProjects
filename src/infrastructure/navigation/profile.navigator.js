@@ -9,6 +9,7 @@ import ProfileScreen from "../../features/Profile/screens/profile.screens";
 import { StyledSafeAreaView } from "../../utils/safeArea.util.component";
 import { colors } from "../theme/colors";
 import styled from "styled-components/native";
+
 const Stack = createStackNavigator();
 
 // const HomeSafeAreaView = styled(StyledSafeAreaView)`
