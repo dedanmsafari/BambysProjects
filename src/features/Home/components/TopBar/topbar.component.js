@@ -9,8 +9,10 @@ import {
 } from "./topbar.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../../../../infrastructure/theme/colors";
+import { useNavigation } from "@react-navigation/native";
 
 const TopBar = ({ onPress }) => {
+  const navigation = useNavigation();
   return (
     <TopBarContainer>
       <LogoButtonHome activeOpacity={0.5} onPress={onPress}>
@@ -22,7 +24,7 @@ const TopBar = ({ onPress }) => {
       </LogoButtonHome>
 
       <IconContainer>
-        <IconButton>
+        <IconButton onPress={() => navigation.navigate("Maps")}>
           <Ionicons name="map-sharp" size={20} color={colors.brand.primary} />
         </IconButton>
         <IconButton>
