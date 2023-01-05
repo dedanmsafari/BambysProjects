@@ -1,6 +1,6 @@
 import { View, ScrollView } from "react-native";
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import { FadeInView } from "../../../animations/fade.animation";
 import FeedData from "../components/feed/data";
