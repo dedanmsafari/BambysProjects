@@ -6,6 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 import SocialNavigator from "./social.navigator";
 import HomeNavigator from "./home.navigator";
 import ProfileNavigator from "./profile.navigator";
+import LocationProvider from "../../services/backgroundLocation/background.context";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -26,22 +27,24 @@ const createScreenOptions = ({ route }) => {
 
 export default function AppNavigator() {
   return (
-    <Tab.Navigator
-      screenOptions={createScreenOptions}
-      labeled={false}
-      activeColor={colors.brand.primary}
-      inactiveColor={colors.brand.muted}
-      barStyle={{
-        position: "relative",
-        backgroundColor: colors.bg.primary,
+    <LocationProvider>
+      <Tab.Navigator
+        screenOptions={createScreenOptions}
+        labeled={false}
+        activeColor={colors.brand.primary}
+        inactiveColor={colors.brand.muted}
+        barStyle={{
+          position: "relative",
+          backgroundColor: colors.bg.primary,
 
-        borderTopWidth: 1,
-        borderTopColor: colors.ui.tertiary,
-      }}
-    >
-      <Tab.Screen name="Home" component={HomeNavigator} />
-      <Tab.Screen name="People" component={SocialNavigator} />
-      <Tab.Screen name="Profile" component={ProfileNavigator} />
-    </Tab.Navigator>
+          borderTopWidth: 1,
+          borderTopColor: colors.ui.tertiary,
+        }}
+      >
+        <Tab.Screen name="Home" component={HomeNavigator} />
+        <Tab.Screen name="People" component={SocialNavigator} />
+        <Tab.Screen name="Profile" component={ProfileNavigator} />
+      </Tab.Navigator>
+    </LocationProvider>
   );
 }
