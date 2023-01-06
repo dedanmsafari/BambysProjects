@@ -6,7 +6,7 @@ export const BackgroundContext = createContext();
 const LocationProvider = ({ children }) => {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
-  const [radiusValue, setValue] = useState(1.5);
+  const [radiusValue, setValue] = useState(1);
 
   useEffect(() => {
     (async () => {
