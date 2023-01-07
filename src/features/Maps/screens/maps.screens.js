@@ -10,6 +10,7 @@ import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { BackgroundContext } from "../../../services/backgroundLocation/background.context";
+import { GOOGLE_MAPS_API_KEY } from "@env";
 import { colors } from "../../../infrastructure/theme/colors";
 import { Text } from "../../../components/text/text.component";
 import { Ionicons } from "@expo/vector-icons";
@@ -56,7 +57,7 @@ const MapsScreens = () => {
           });
         }}
         query={{
-          key: "AIzaSyDbBHtwf8CUASJT7AVYY44Fu-FqAS15wQw",
+          key: GOOGLE_MAPS_API_KEY,
           language: "en",
           components: "country:ken",
           types: "establishment",
@@ -113,7 +114,5 @@ const MapsScreens = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default MapsScreens;
