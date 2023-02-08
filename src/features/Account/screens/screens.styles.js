@@ -63,7 +63,7 @@ export const OtherSignInText = styled.View`
 
 export const OtherSignInBlock = styled.View`
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 `;
 
 export const GoogleButton = styled.TouchableOpacity`
@@ -72,7 +72,7 @@ export const GoogleButton = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  width: 160px;
+  width: 100%;
   padding: 5px;
 `;
 
