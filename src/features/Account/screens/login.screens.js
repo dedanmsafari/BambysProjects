@@ -23,9 +23,16 @@ import {
 } from "./screens.styles";
 import BackArrow from "../components/backArrow.component";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
+import { signInWithGooglePopup } from "../../../utils/firebase.utils";
 
 const LoginScreen = ({ navigation }) => {
   const { setLoggedIn } = useContext(AuthenticationContext);
+
+  const googleSignIn = async () => {
+    await signInWithGooglePopup();
+    setLoggedIn(true);
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.brand.tertiary }}>
       <StyledSafeAreaView>
@@ -43,12 +50,23 @@ const LoginScreen = ({ navigation }) => {
             }}
           />
           <Spacer size="medium" />
+          <TextInput
+            placeholder="Password"
+            cursorColor={colors.brand.tertiary}
+            style={{
+              borderBottomWidth: 1,
+              height: 40,
+              padding: 5,
+              borderBottomColor: "#f1f1f1",
+            }}
+          />
+          <Spacer size="large" />
 
           <SignInEmailButton activeOpacity={0.5}>
             <MaterialIcons name="email" size={17} color="white" />
             <Spacer position="right" />
             <Text variant="caption" style={{ color: "white" }}>
-              Sign in with Email
+              Sign in
             </Text>
           </SignInEmailButton>
 
@@ -57,7 +75,7 @@ const LoginScreen = ({ navigation }) => {
           </OtherSignInText>
 
           <OtherSignInBlock>
-            <SmsButton activeOpacity={0.5} onPress={() => setLoggedIn(true)}>
+            {/* <SmsButton activeOpacity={0.5}>
               <FontAwesome
                 name="hashtag"
                 size={12}
@@ -66,9 +84,9 @@ const LoginScreen = ({ navigation }) => {
               />
               <Spacer position="right" size="xsmall" />
               <Text variant="caption">SMS</Text>
-            </SmsButton>
+            </SmsButton> */}
 
-            <GoogleButton activeOpacity={0.5}>
+            <GoogleButton activeOpacity={0.5} onPress={googleSignIn}>
               <Image
                 style={{ height: 20, width: 20, marginTop: -2 }}
                 source={require("../../../../assets/google.png")}
