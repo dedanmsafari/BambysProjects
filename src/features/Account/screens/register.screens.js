@@ -27,8 +27,8 @@ const RegisterScreen = ({ navigation }) => {
           caption="Choose a way to connect with your Account"
         />
         <Spacer size="small" />
-        <OtherSignInBlock>
-          <SmsButton activeOpacity={0.5}>
+
+        {/* <SmsButton activeOpacity={0.5}>
             <FontAwesome
               name="hashtag"
               size={12}
@@ -37,8 +37,42 @@ const RegisterScreen = ({ navigation }) => {
             />
             <Spacer position="right" size="xsmall" />
             <Text variant="caption">PHONE</Text>
-          </SmsButton>
+          </SmsButton> */}
+        <TextInput
+          placeholder="Email"
+          cursorColor={colors.brand.tertiary}
+          style={{
+            borderBottomWidth: 1,
+            height: 40,
+            padding: 5,
+            borderBottomColor: "#f1f1f1",
+          }}
+        />
+        <Spacer size="medium" />
+        <TextInput
+          placeholder="Password"
+          cursorColor={colors.brand.tertiary}
+          style={{
+            borderBottomWidth: 1,
+            height: 40,
+            padding: 5,
+            borderBottomColor: "#f1f1f1",
+          }}
+        />
+        <Spacer size="large" />
+        <SignInEmailButton activeOpacity={0.5}>
+          <MaterialIcons name="email" size={17} color="white" />
+          <Spacer position="right" />
+          <Text variant="caption" style={{ color: "white" }}>
+            Sign up
+          </Text>
+        </SignInEmailButton>
 
+        <OtherSignInText>
+          <Text variant="hint">Sign up with:</Text>
+        </OtherSignInText>
+
+        <OtherSignInBlock>
           <GoogleButton activeOpacity={0.5} onPress={() => setLoggedIn(true)}>
             <Image
               style={{ height: 20, width: 20, marginTop: -2 }}
@@ -48,16 +82,6 @@ const RegisterScreen = ({ navigation }) => {
             <Text variant="caption">Google</Text>
           </GoogleButton>
         </OtherSignInBlock>
-        <OtherSignInText>
-          <Text variant="hint">Sign up with:</Text>
-        </OtherSignInText>
-        <SignInEmailButton activeOpacity={0.5}>
-          <MaterialIcons name="email" size={17} color="white" />
-          <Spacer position="right" />
-          <Text variant="caption" style={{ color: "white" }}>
-            Sign up with Email
-          </Text>
-        </SignInEmailButton>
       </RegisterContainer>
     </View>
   );
