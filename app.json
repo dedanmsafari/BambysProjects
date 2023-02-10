@@ -1,6 +1,12 @@
 {
   "expo": {
     "name": "Localize",
+    "plugins": [
+      "@react-native-firebase/app",
+      "@react-native-firebase/perf",
+      "@react-native-firebase/crashlytics",
+      "@react-native-firebase/auth"
+    ],
     "slug": "Localize",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -19,6 +25,7 @@
       "supportsTablet": true
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyAXn-3w4IbLxdswpYTjLaFYGIaP4l1q6uM"
